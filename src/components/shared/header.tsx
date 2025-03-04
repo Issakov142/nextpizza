@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {Button} from '@/components/ui';
 import {ArrowRight, ShoppingCart, User} from 'lucide-react';
 import Link from 'next/link';
+import {SearchInput} from '@/components/shared/search-input';
 
 interface Props {
     className?: string
@@ -26,6 +27,9 @@ export const Header: React.FC<Props> = ({className}) => {
                     </div>
                 </Link>
                 {/*Middle part == SEARCHER*/}
+                <div className={'mx-10 flex-1'}>
+                    <SearchInput/>
+                </div>
                 {/*Right part*/}
                 <div className={'flex items-center gap-3'}>
                     <Button variant={'outline'} className={'flex items-center gap-1'}>
