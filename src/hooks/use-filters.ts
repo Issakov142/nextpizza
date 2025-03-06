@@ -20,7 +20,6 @@ export interface Filters {
     prices: PriceProps
 }
 interface ReturnProps extends Filters {
-    setPrices: (arg: {priceFrom: number, priceTo: number}) => void
     updatePrice:(name: keyof PriceProps, value: number) => void
     setSizes: (value: string) => void
     setPizzaTypes: (value: string) => void
@@ -42,10 +41,10 @@ export const useFilters = ():ReturnProps => {
     const [pizzaTypes, {toggle: togglePizzaTypes}] = useSet(new Set<string>(searchParams.get('pizzaTypes') ? searchParams.get('pizzaTypes')?.split(',') : []));
 
     /*Prices filter*/
-    const [prices, setPrices] = React.useState<PriceProps>({
+    const [prices, setPrices] = React.useState<PriceProps>(searchParams.get('priceFrom') && searchParams.get('priceTo') ? {
         priceFrom: Number(searchParams.get('priceFrom') || undefined),
         priceTo: Number(searchParams.get('priceTo') || undefined)
-    })
+    } : {})
 
     const updatePrice = (name: keyof PriceProps, value: number) => {
         setPrices(prev => ({
@@ -58,7 +57,6 @@ export const useFilters = ():ReturnProps => {
         pizzaTypes,
         prices,
         selectedIngredients,
-        setPrices,
         updatePrice,
         setPizzaTypes: togglePizzaTypes,
         setSizes: toggleSizes,

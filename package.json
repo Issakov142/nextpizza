@@ -34,22 +34,22 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-use": "^17.6.0",
-    "tailwind-merge": "^3.0.1",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@eslint/eslintrc": "^3.3.0",
+    "@types/node": "^20.17.23",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.21.0",
     "eslint-config-next": "15.1.7",
-    "postcss": "^8",
+    "postcss": "^8.5.3",
     "prisma": "^6.4.1",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5.8.2"
   }
 }

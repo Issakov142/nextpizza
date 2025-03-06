@@ -57,7 +57,7 @@ export const SearchInput: React.FC<Props> = ({className}) => {
                     {products.map((pr) => {
                         return <Link key={pr.id}
                                      className={'flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10'}
-                                     href={`/product/${pr.id}`}
+                                     href={`/src/app/(root)/product/${pr.id}`}
                                      onClick={onClickProduct}
                         >
                             <img className={'rounded-sm h-8 w-8'} src={`${pr.imageUrl}`} alt={pr.name}/>

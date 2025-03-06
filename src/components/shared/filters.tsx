@@ -18,7 +18,6 @@ export const Filters: React.FC<Props> = ({className}) => {
     const {ingredients, loading} = useIngredients()
     const {
         updatePrice,
-        setPrices,
         selectedIngredients,
         prices,
         pizzaTypes,
@@ -32,6 +31,11 @@ export const Filters: React.FC<Props> = ({className}) => {
 
     const items = ingredients.map((i) => ({text: i.name, value: String(i.id)}))
 
+    const setPrices = (prices: number[]) => {
+        console.log(prices, 999);
+        updatePrice('priceFrom', prices[0]);
+        updatePrice('priceTo', prices[1]);
+    };
 
     return (
         <div className={className}>
@@ -70,7 +74,7 @@ export const Filters: React.FC<Props> = ({className}) => {
                            onChange={e => updatePrice('priceTo', Number(e.currentTarget.value))}/>
                 </div>
                 <RangeSlider min={0} max={5000} step={10} value={[prices.priceFrom || 0, prices.priceTo || 5000]}
-                             onValueChange={([from, to]) => setPrices({priceFrom: from, priceTo: to})}/>
+                             onValueChange={setPrices}/>
             </div>
             {/*Фильтр ингредиентов*/}
             <CheckboxFiltersGroup
