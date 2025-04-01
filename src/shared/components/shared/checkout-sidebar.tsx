@@ -41,7 +41,7 @@ export const CheckoutSidebar: React.FC<Props> = ({className, loading, totalAmoun
                     <Truck size={20} className={'mr-2 text-gray-400'}/>Доставка:
                 </div>} value={loading ? <Skeleton className={'h-6 w-14 rounded-[6px]'}/> : `${DELIVERY_PRICE} руб.`}/>
 
-            <Button type={'submit'} className={'w-full h-14 rounded-2xl mt-6 text-base font-bold'}>
+            <Button loading={loading} type={'submit'} className={'w-full h-14 rounded-2xl mt-6 text-base font-bold'}>
                 Перейти к оплате
                 <ArrowRight className={'w-5 ml-2'}/>
             </Button>
