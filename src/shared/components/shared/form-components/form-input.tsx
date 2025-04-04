@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {ClearButton, ErrorText, RequiredSymbol} from '@/shared/components/shared';
 import {Input} from '@/shared/components/ui';
