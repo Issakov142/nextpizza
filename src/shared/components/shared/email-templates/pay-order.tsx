@@ -10,6 +10,6 @@ export const PayOrderTemplate: React.FC<Props> = ({orderId, totalAmount, payment
     <div>
         <h1>Заказ #{orderId}</h1>
 
-        <p>Оплатите заказ на сумму <b>{totalAmount} p</b>. Перейдите по <a href={paymentUrl}> этой </a>ссылке для оплаты заказа.</p>
+        <p>Оплатите заказ на сумму <b>{totalAmount} p</b>. Перейдите по {' '} <a href={paymentUrl}> этой </a>ссылке для оплаты заказа.</p>
     </div>
 );
