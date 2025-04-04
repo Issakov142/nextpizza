@@ -1,11 +1,13 @@
-import {Container, Filters, Title, TopBar, Stories} from '@/shared/components/shared'
+import {Container, Filters, Stories, Title, TopBar} from '@/shared/components/shared'
 import {ProductsGroupList} from '@/shared/components/shared/products-group-list';
-import {prisma} from '../../../prisma/prisma-client';
 import {Suspense} from 'react';
 import {findPizzas, type GetSearchParams} from '@/shared/lib/find-pizzas';
 
-export default async function Home({searchParams}: {searchParams: GetSearchParams}) {
+export default async function Home(props: {searchParams: Promise<GetSearchParams>}) {
+
+    const searchParams = await props.searchParams;
     const categories = await findPizzas(searchParams)
+
 
 
 

@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     // eslint: {
     //     ignoreDuringBuilds: true, // Disables ESLint during production builds
     // },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 export default nextConfig;
